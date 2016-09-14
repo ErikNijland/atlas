@@ -13,6 +13,8 @@
             <dp-loading-indicator is-loading="vm.isLoading" use-delay="true" show-inline="true"></dp-loading-indicator>
 
             <div ng-if="!vm.isLoading">
+                <h1>{{vm.pageTitle}} ({{vm.numberOfResults | number}})</h1>
+
                 <dp-data-selection-download-button
                     dataset="{{vm.state.dataset}}"
                     active-filters="vm.state.filters">

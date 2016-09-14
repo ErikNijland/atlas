@@ -30,6 +30,7 @@
         globalConfig = {
             bag: {
                 PRIMARY_KEY: 'id',
+                LABEL: 'Adressen',
                 FILTERS: [
                     {
                         slug: 'stadsdeel_naam',
@@ -107,6 +108,7 @@
                 ]
             }
         };
+
         return angular.merge(globalConfig, envConfig[environment.NAME]);
     }
 })();

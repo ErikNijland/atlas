@@ -10,6 +10,13 @@ describe('The dp-data-selection component', function () {
         angular.mock.module(
             'dpDataSelection',
             {
+                dataSelectionConfig: {
+                    zwembaden: {
+                        LABEL: 'Zwembaden'
+                    }
+                }
+            },
+            {
                 dataSelectionApi: {
                     query: function () {
                         var q = $q.defer();
@@ -59,6 +66,7 @@ describe('The dp-data-selection component', function () {
         };
 
         mockedApiData = {
+            number_of_results: 143,
             number_of_pages: 7,
             filters: 'MOCKED_FILTER_DATA',
             tableData: 'MOCKED_TABLE_DATA'
