@@ -66,7 +66,7 @@ describe('The dp-data-selection component', function () {
         };
 
         mockedApiData = {
-            number_of_results: 143,
+            number_of_results: 1430,
             number_of_pages: 7,
             filters: 'MOCKED_FILTER_DATA',
             tableData: 'MOCKED_TABLE_DATA'
@@ -91,6 +91,12 @@ describe('The dp-data-selection component', function () {
 
         return component;
     }
+
+    it('shows a header with a label from the configuration and the total number of results', function () {
+        var component = getComponent(mockedState);
+
+        expect(component.find('h1').text()).toBe('Zwembaden (1.430)');
+    });
 
     it('retieves the filter and table data and passes it to it\'s child directives', function () {
         var component = getComponent(mockedState),
