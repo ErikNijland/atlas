@@ -1,0 +1,19 @@
+.c-data-selection__header {
+  margin-top: $base-whitespace * 2;
+  margin-bottom: $base-whitespace;
+
+  &::after {
+    @extend %clearfix;
+  }
+}
+
+.c-data-selection__header__title {
+  display: inline-block;
+  padding-top: 0;
+  float: left;
+}
+
+.c-data-selection__header__button {
+  display: inline-block;
+  float: right;
+}
