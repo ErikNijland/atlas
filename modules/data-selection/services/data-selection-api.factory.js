@@ -20,6 +20,7 @@
 
             return api.getByUrl(dataSelectionConfig[dataset].ENDPOINT_PREVIEW, searchParams).then(function (data) {
                 return {
+                    number_of_results: data.object_count,
                     number_of_pages: data.page_count,
                     filters: formatFilters(dataset, data.aggs_list),
                     tableData: formatTableData(dataset, data.object_list)

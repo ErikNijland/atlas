@@ -97,7 +97,8 @@ describe('The dataSelectionApi factory', function () {
                     id: '2'
                 }
             ],
-            page_count: 2
+            page_count: 1,
+            object_count: 2
         };
 
         spyOn(api, 'getByUrl').and.callThrough();
@@ -131,7 +132,18 @@ describe('The dataSelectionApi factory', function () {
         });
         $rootScope.$apply();
 
-        expect(output.number_of_pages).toBe(2);
+        expect(output.number_of_pages).toBe(1);
+    });
+
+    it('returns the total number of results (for the active filter set)', function () {
+        var output;
+
+        dataSelectionApi.query('zwembaden', {}, 1).then(function (_output_) {
+            output = _output_;
+        });
+        $rootScope.$apply();
+
+        expect(output.number_of_results).toBe(2);
     });
 
     describe('it returns all available filters', function () {
