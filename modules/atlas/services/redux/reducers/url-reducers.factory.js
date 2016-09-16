@@ -20,12 +20,14 @@
             } else {
                 var newState = {};
 
+
                 newState.search = getSearchState(payload);
                 newState.map = getMapState(payload);
                 newState.page = payload.pagina || null;
                 newState.detail = getDetailState(oldState, payload);
                 newState.straatbeeld = getStraatbeeldState(oldState, payload);
                 newState.dataSelection = getDataSelectionState(payload);
+                newState.stackedPanels = getStackedPanelsState(payload);
                 newState.isPrintMode = getPrintState(payload);
 
                 return newState;
@@ -191,6 +193,16 @@
                 } else {
                     return null;
                 }
+            }
+
+            function getStackedPanelsState () {
+                var stackedPanels = [];
+
+                if (angular.isString(payload.vensters)) {
+                    stackedPanels = payload.vensters.split(',');
+                }
+
+                return stackedPanels;
             }
 
             function getPrintState (payload) {

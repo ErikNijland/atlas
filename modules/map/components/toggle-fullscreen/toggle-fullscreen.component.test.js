@@ -54,11 +54,11 @@ describe('The dp-toggle-fullscreen component', function () {
             expect(component.find('button img').attr('alt')).toBe('Kaart vergroten');
         });
 
-        it('triggers the MAP_FULLSCREEN action w/ payload=true when clicking the button', function () {
+        it('triggers the STACKED_PANELS_FULLSCREEN_MAP action w/ payload=true when clicking the button', function () {
             component.find('button').click();
 
             expect(store.dispatch).toHaveBeenCalledWith({
-                type: ACTIONS.MAP_FULLSCREEN,
+                type: ACTIONS.STACKED_PANELS_FULLSCREEN_MAP,
                 payload: true
             });
         });
@@ -76,11 +76,11 @@ describe('The dp-toggle-fullscreen component', function () {
             expect(component.find('button img').attr('alt')).toBe('Kaart verkleinen');
         });
 
-        it('triggers the MAP_FULLSCREEN action w/ payload=false when clicking the button', function () {
+        it('triggers the STACKED_PANELS_FULLSCREEN_MAP action w/ payload=false when clicking the button', function () {
             component.find('button').click();
 
             expect(store.dispatch).toHaveBeenCalledWith({
-                type: ACTIONS.MAP_FULLSCREEN,
+                type: ACTIONS.STACKED_PANELS_FULLSCREEN_MAP,
                 payload: false
             });
         });

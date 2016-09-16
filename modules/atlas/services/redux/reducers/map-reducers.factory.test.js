@@ -192,17 +192,17 @@ describe('The map reducers', function () {
         });
     });
 
-    describe('MAP_FULLSCREEN', function () {
+    describe('STACKED_PANELS_FULLSCREEN_MAP', function () {
         it('can toggle the fullscreen mode', function () {
             var inputState = angular.copy(defaultState),
                 output;
 
             //Enable fullscreen
-            output = mapReducers.MAP_FULLSCREEN(inputState, true);
+            output = mapReducers.STACKED_PANELS_FULLSCREEN_MAP(inputState, true);
             expect(output.map.isFullscreen).toBe(true);
 
             //Disable fullscreen
-            output = mapReducers.MAP_FULLSCREEN(inputState, false);
+            output = mapReducers.STACKED_PANELS_FULLSCREEN_MAP(inputState, false);
             expect(output.map.isFullscreen).toBe(false);
         });
 
@@ -213,8 +213,29 @@ describe('The map reducers', function () {
             inputState.map.showLayerSelection = true;
 
             //Enable fullscreen
-            output = mapReducers.MAP_FULLSCREEN(inputState, true);
+            output = mapReducers.STACKED_PANELS_FULLSCREEN_MAP(inputState, true);
             expect(output.map.showLayerSelection).toBe(false);
+        });
+    });
+
+    describe('MAP_SHOW_ACTIVE_OVERLAYS', function () {
+        it('sets the variable to true', function () {
+            var inputState = angular.copy(defaultState),
+                output;
+
+            output = mapReducers.MAP_SHOW_ACTIVE_OVERLAYS(inputState);
+            expect(output.map.showActiveOverlays).toBe(true);
+        });
+    });
+
+    describe('MAP_HIDE_ACTIVE_OVERLAYS', function () {
+        it('sets the variable to false', function () {
+            var output,
+                inputState = angular.copy(defaultState);
+
+            inputState.map.showActiveOverlays = true;
+            output = mapReducers.MAP_HIDE_ACTIVE_OVERLAYS(inputState);
+            expect(output.map.showActiveOverlays).toBe(false);
         });
     });
 });

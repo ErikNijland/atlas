@@ -20,6 +20,7 @@
                 getDetailParams(state),
                 getStraatbeeldParams(state),
                 getDataSelectionParams(state),
+                getStackedPanelsParams(state),
                 getPrintParams(state)
             );
 
@@ -121,6 +122,16 @@
                 }
 
                 params['dataset-pagina'] = String(state.dataSelection.page);
+            }
+
+            return params;
+        }
+
+        function getStackedPanelsParams (state) {
+            var params = {};
+
+            if (angular.isArray(state.stackedPanels)) {
+                params.vensters = state.stackedPanels.join(',');
             }
 
             return params;

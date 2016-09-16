@@ -19,7 +19,7 @@
 
         vm.toggle = function () {
             store.dispatch({
-                type: ACTIONS.MAP_FULLSCREEN,
+                type: ACTIONS.STACKED_PANELS_FULLSCREEN_MAP,
                 payload: !vm.isFullscreen
             });
         };
