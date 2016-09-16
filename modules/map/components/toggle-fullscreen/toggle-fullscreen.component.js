@@ -16,7 +16,7 @@
 
     function DpToggleFullscreenController (store, ACTIONS) {
         var vm = this;
-        console.log(vm.isFullscreen);
+
         vm.toggle = function () {
             store.dispatch({
                 type: !vm.isFullscreen ?

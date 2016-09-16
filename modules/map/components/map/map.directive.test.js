@@ -124,10 +124,12 @@ describe('The dp-map directive', function () {
         element = document.createElement('dp-map');
         element.setAttribute('map-state', 'mapState');
         element.setAttribute('markers', 'markers');
+        element.setAttribute('is-fullscreen', 'isFullscreen');
 
         scope = $rootScope.$new();
         scope.mapState = mapState;
         scope.markers = markers;
+        scope.isFullscreen = false;
 
         directive = $compile(element)(scope);
 
