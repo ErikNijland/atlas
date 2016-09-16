@@ -128,7 +128,7 @@
         function getStackedPanelsParams (state) {
             var params = {};
 
-            if (angular.isArray(state.stackedPanels)) {
+            if (angular.isArray(state.stackedPanels) && state.stackedPanels.length) {
                 params.vensters = state.stackedPanels.join(',');
             }
 
