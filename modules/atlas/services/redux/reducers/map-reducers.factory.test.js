@@ -93,7 +93,7 @@ describe('The map reducers', function () {
         });
     });
 
-    describe('MAP_TOGGILE_VISIBILITY', function() {
+    describe('MAP_TOGGLE_VISIBILITY', function() {
         it('hides an overlay', function() {
             var inputState = angular.copy(defaultState),
                 output;
