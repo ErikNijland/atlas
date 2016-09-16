@@ -44,8 +44,8 @@ describe('The stateToUrlMiddleware factory', function () {
         expect(stateToUrl.update).toHaveBeenCalledWith('FAKE_STATE', jasmine.anything());
     });
 
-    it('doesn\'t call stateToUrl.update for URL_CHANGE, FETCH_DETAIL, FETCH_STRAATBEELD, SHOW_LAYER_SELECTION and ' +
-        'HIDE_LAYER_SELECTION', function () {
+    it('doesn\'t call stateToUrl.update for URL_CHANGE, FETCH_DETAIL, FETCH_STRAATBEELD, ' +
+        'STACKED_PANELS_SHOW_LAYER_SELECTION and STACKED_PANELS_HIDE_LAYER_SELECTION', function () {
 
         var actionWithoutUrlUpdate = [
             ACTIONS.URL_CHANGE,
@@ -79,8 +79,8 @@ describe('The stateToUrlMiddleware factory', function () {
             ACTIONS.SHOW_STRAATBEELD_INITIAL,
             ACTIONS.SHOW_STRAATBEELD_SUBSEQUENT,
             ACTIONS.STRAATBEELD_SET_ORIENTATION,
-            ACTIONS.SHOW_LAYER_SELECTION,
-            ACTIONS.HIDE_LAYER_SELECTION,
+            ACTIONS.STACKED_PANELS_SHOW_LAYER_SELECTION,
+            ACTIONS.STACKED_PANELS_HIDE_LAYER_SELECTION,
             ACTIONS.MAP_SHOW_ACTIVE_OVERLAYS,
             ACTIONS.MAP_HIDE_ACTIVE_OVERLAYS,
             ACTIONS.SHOW_HOME,
@@ -119,8 +119,8 @@ describe('The stateToUrlMiddleware factory', function () {
                 ACTIONS.SHOW_DETAIL,
                 ACTIONS.SHOW_STRAATBEELD_INITIAL,
                 ACTIONS.STRAATBEELD_SET_ORIENTATION,
-                ACTIONS.SHOW_LAYER_SELECTION,
-                ACTIONS.HIDE_LAYER_SELECTION,
+                ACTIONS.STACKED_PANELS_SHOW_LAYER_SELECTION,
+                ACTIONS.STACKED_PANELS_HIDE_LAYER_SELECTION,
                 ACTIONS.SHOW_HOME,
                 ACTIONS.SHOW_PAGE,
                 ACTIONS.SHOW_PRINT,
