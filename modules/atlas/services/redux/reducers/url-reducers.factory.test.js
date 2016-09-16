@@ -377,7 +377,7 @@ describe('The urlReducers factory', function () {
 
                 mockedState.stackedPanels = ['fullscreen'];
                 output = urlReducers.URL_CHANGE(mockedState, mockedSearchParams);
-                expect(output.stackedPanels.length).toBe(0);
+                expect(output.stackedPanels).toEqual([]);
             });
 
             it('can have one stacked panel', function () {

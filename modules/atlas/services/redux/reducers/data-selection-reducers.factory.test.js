@@ -56,7 +56,7 @@ describe('The dataSelectionReducers factory', function () {
             //It disables the rest
             expect(output.map.highlight).toBeNull();
             expect(output.map.isLoading).toBe(false);
-            expect(output.stackedPanels.length).toBe(0);
+            expect(output.stackedPanels).toEqual([]);
         });
 
         it('sets the dataSelection state', function () {

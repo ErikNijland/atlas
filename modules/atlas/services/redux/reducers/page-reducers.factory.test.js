@@ -58,7 +58,7 @@ describe('The pageReducers factory', function () {
             expect(output.detail).toBeNull();
             expect(output.straatbeeld).toBeNull();
             expect(output.dataSelection).toBeNull();
-            expect(output.stackedPanels.length).toBe(0);
+            expect(output.stackedPanels).toEqual([]);
         });
     });
 });

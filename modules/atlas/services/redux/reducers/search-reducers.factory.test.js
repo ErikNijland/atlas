@@ -57,7 +57,7 @@ describe('The search-reducers factory', function () {
             expect(output.detail).toBeNull();
             expect(output.straatbeeld).toBeNull();
             expect(output.dataSelection).toBeNull();
-            expect(output.stackedPanels.length).toBe(0);
+            expect(output.stackedPanels).toEqual([]);
         });
     });
 
@@ -106,7 +106,7 @@ describe('The search-reducers factory', function () {
             expect(output.detail).toBeNull();
             expect(output.straatbeeld).toBeNull();
             expect(output.dataSelection).toBeNull();
-            expect(output.stackedPanels.length).toBe(0);
+            expect(output.stackedPanels).toEqual([]);
         });
 
         it('changes the viewCenter when showLayerSelection or fullscreen mode is enabled', function () {
