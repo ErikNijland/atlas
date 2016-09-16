@@ -19,8 +19,9 @@
 
         vm.toggle = function () {
             store.dispatch({
-                type: ACTIONS.STACKED_PANELS_FULLSCREEN_MAP,
-                payload: !vm.isFullscreen
+                type: !vm.isFullscreen ?
+                    ACTIONS.STACKED_PANELS_SHOW_FULLSCREEN_MAP :
+                    ACTIONS.STACKED_PANELS_HIDE_FULLSCREEN_MAP
             });
         };
     }
