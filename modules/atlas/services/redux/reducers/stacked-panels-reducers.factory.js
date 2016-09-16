@@ -26,9 +26,14 @@
         }
 
         function stackedPanelsShowLayerSelectionReducer (oldState) {
-            var newState = angular.copy(oldState);
+            var newState = angular.copy(oldState),
+                oldStackedPanel;
 
-            newState.stackedPanels.push('layer-selection');
+            oldStackedPanel = oldState.stackedPanels[oldState.stackedPanels.length - 1];
+
+            if (oldStackedPanel !== 'layer-selection') {
+                newState.stackedPanels.push('layer-selection');
+            }
 
             return newState;
         }

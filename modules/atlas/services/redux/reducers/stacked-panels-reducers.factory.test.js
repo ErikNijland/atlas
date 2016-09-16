@@ -19,6 +19,18 @@ describe('The stackedPanelsReducers factory', function () {
 
             expect(output.stackedPanels).toEqual(['layer-selection']);
         });
+
+        it('won\'t allow to add the same panel twice', function () {
+            var output;
+
+            //Add it once
+            output = stackedPanelsReducers[ACTIONS.STACKED_PANELS_SHOW_LAYER_SELECTION](DEFAULT_STATE);
+            expect(output.stackedPanels).toEqual(['layer-selection']);
+
+            //Try adding it again
+            output = stackedPanelsReducers[ACTIONS.STACKED_PANELS_SHOW_LAYER_SELECTION](output);
+            expect(output.stackedPanels).toEqual(['layer-selection']);
+        });
     });
 
     describe('STACKED_PANELS_HIDE_LAYER_SELECTION', function () {
