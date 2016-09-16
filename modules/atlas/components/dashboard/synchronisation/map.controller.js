@@ -51,6 +51,8 @@
             }
 
             vm.mapState = state.map;
+
+            vm.isFullscreen = state.stackedPanels[state.stackedPanels.length - 1] === 'fullscreen';
         }
 
         function convertLocationToGeoJSON (location) {
