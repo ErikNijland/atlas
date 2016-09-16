@@ -3,11 +3,11 @@
 
     angular
         .module('atlas')
-        .factory('layerReducers', layerReducersFactory);
+        .factory('stackedPanelsReducers', stackedPanelsReducersFactory);
 
-    layerReducersFactory.$inject = ['ACTIONS'];
+    stackedPanelsReducersFactory.$inject = ['ACTIONS'];
 
-    function layerReducersFactory (ACTIONS) {
+    function stackedPanelsReducersFactory (ACTIONS) {
         var reducers = {};
 
         reducers[ACTIONS.STACKED_PANELS_SHOW_FULLSCREEN_MAP] = stackedPanelsShowFullscreenMapReducer;

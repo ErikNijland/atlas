@@ -13,9 +13,9 @@ describe('The stackedPanelsReducers factory', function () {
         });
     });
 
-    describe('SHOW_LAYER_SELECTION', function () {
+    describe('STACKED_PANELS_SHOW_LAYER_SELECTION', function () {
         it('sets the variable to true', function () {
-            var output = stackedPanelsReducers[ACTIONS.SHOW_LAYER_SELECTION](DEFAULT_STATE);
+            var output = stackedPanelsReducers[ACTIONS.STACKED_PANELS_SHOW_LAYER_SELECTION](DEFAULT_STATE);
 
             expect(output.map.showLayerSelection).toBe(true);
         });
@@ -25,13 +25,13 @@ describe('The stackedPanelsReducers factory', function () {
                 inputState = angular.copy(DEFAULT_STATE);
 
             inputState.map.isFullscreen = true;
-            output = stackedPanelsReducers[ACTIONS.SHOW_LAYER_SELECTION](DEFAULT_STATE);
+            output = stackedPanelsReducers[ACTIONS.STACKED_PANELS_SHOW_LAYER_SELECTION](DEFAULT_STATE);
 
             expect(output.map.isFullscreen).toBe(false);
         });
     });
 
-    describe('HIDE_LAYER_SELECTION', function () {
+    describe('STACKED_PANELS_HIDE_LAYER_SELECTION', function () {
         it('sets the variable to true', function () {
             var inputState,
                 output;
@@ -39,7 +39,7 @@ describe('The stackedPanelsReducers factory', function () {
             inputState = angular.copy(DEFAULT_STATE);
             inputState.showLayerSelection = true;
 
-            output = stackedPanelsReducers[ACTIONS.HIDE_LAYER_SELECTION](inputState);
+            output = stackedPanelsReducers[ACTIONS.STACKED_PANELS_HIDE_LAYER_SELECTION](inputState);
 
             expect(output.map.showLayerSelection).toBe(false);
         });
