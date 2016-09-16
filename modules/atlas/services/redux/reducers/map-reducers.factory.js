@@ -16,7 +16,6 @@
         reducers[ACTIONS.MAP_TOGGLE_VISIBILITY_OVERLAY] = mapToggleVisibilityOverlay;
         reducers[ACTIONS.MAP_PAN] = mapPanReducer;
         reducers[ACTIONS.MAP_ZOOM] = mapZoomReducer;
-        reducers[ACTIONS.STACKED_PANELS_FULLSCREEN_MAP] = mapFullscreenReducer;
         reducers[ACTIONS.MAP_SHOW_ACTIVE_OVERLAYS] = showActiveOverlaysReducer;
         reducers[ACTIONS.MAP_HIDE_ACTIVE_OVERLAYS] = hideActiveOverlaysReducer;
 
@@ -119,24 +118,6 @@
             }
 
             newState.map.zoom = payload.zoom;
-
-            return newState;
-        }
-
-        /**
-         * @param {Object} oldState
-         * @param {Number} payload - Boolean that defines whether or not fullscreen mode is enabled
-         *
-         * @returns {Object} newState
-         */
-        function mapFullscreenReducer (oldState, payload) {
-            var newState = angular.copy(oldState);
-
-            if (payload) {
-                newState.map.showLayerSelection = false;
-            }
-
-            newState.map.isFullscreen = payload;
 
             return newState;
         }

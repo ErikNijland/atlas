@@ -92,6 +92,7 @@ describe('The map reducers', function () {
             expect(output.map.overlays).toEqual([]);
         });
     });
+
     describe('MAP_TOGGILE_VISIBILITY', function() {
         it('hides an overlay', function() {
             var inputState = angular.copy(defaultState),
@@ -116,6 +117,7 @@ describe('The map reducers', function () {
                 {id: 'overlay_3', isVisible: true}
             ]);
         });
+
         it('hides an overlay', function() {
             var inputState = angular.copy(defaultState),
                 output;
@@ -140,6 +142,7 @@ describe('The map reducers', function () {
             ]);
         });
     });
+
     describe('MAP_PAN', function () {
         it('updates the viewCenter', function () {
             var inputState = angular.copy(defaultState),
@@ -189,32 +192,6 @@ describe('The map reducers', function () {
             });
             expect(output.map.viewCenter).toEqual([52.3719, 4.9012]);
             expect(output.map.zoom).toBe(8);
-        });
-    });
-
-    describe('STACKED_PANELS_FULLSCREEN_MAP', function () {
-        it('can toggle the fullscreen mode', function () {
-            var inputState = angular.copy(defaultState),
-                output;
-
-            //Enable fullscreen
-            output = mapReducers.STACKED_PANELS_FULLSCREEN_MAP(inputState, true);
-            expect(output.map.isFullscreen).toBe(true);
-
-            //Disable fullscreen
-            output = mapReducers.STACKED_PANELS_FULLSCREEN_MAP(inputState, false);
-            expect(output.map.isFullscreen).toBe(false);
-        });
-
-        it('when enabling fullscreen, the layer selection will be disabled', function () {
-            var inputState = angular.copy(defaultState),
-                output;
-
-            inputState.map.showLayerSelection = true;
-
-            //Enable fullscreen
-            output = mapReducers.STACKED_PANELS_FULLSCREEN_MAP(inputState, true);
-            expect(output.map.showLayerSelection).toBe(false);
         });
     });
 

@@ -32,8 +32,6 @@
             };
 
             newState.map.highlight = null;
-            newState.map.showLayerSelection = false;
-            newState.map.isFullscreen = false;
             newState.page = null;
             newState.detail = null;
             newState.straatbeeld = null;
@@ -62,9 +60,7 @@
             }
 
             newState.map.highlight = null;
-            newState.map.showLayerSelection = false;
             newState.map.showActiveOverlays = false;
-            newState.map.isFullscreen = false;
             newState.page = null;
             newState.detail = null;
             newState.straatbeeld = null;
