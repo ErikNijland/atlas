@@ -13,6 +13,28 @@ describe('The stackedPanelsReducers factory', function () {
         });
     });
 
+    describe('STACKED_PANELS_SHOW_FULLSCREEN_MAP', function () {
+        it('adds an entry to stackedPanels', function () {
+            var output = stackedPanelsReducers[ACTIONS.STACKED_PANELS_SHOW_FULLSCREEN_MAP](DEFAULT_STATE);
+
+            expect(output.stackedPanels).toEqual(['fullscreen']);
+        });
+    });
+
+    describe('STACKED_PANELS_HIDE_FULLSCREEN_MAP', function () {
+        it('removes the last entry of stackedPanels', function () {
+            var inputState,
+                output;
+
+            inputState = angular.copy(DEFAULT_STATE);
+            inputState.stackedPanels = ['fullscreen'];
+
+            output = stackedPanelsReducers[ACTIONS.STACKED_PANELS_HIDE_FULLSCREEN_MAP](inputState);
+
+            expect(output.stackedPanels).toEqual([]);
+        });
+    });
+
     describe('STACKED_PANELS_SHOW_LAYER_SELECTION', function () {
         it('adds an entry to stackedPanels', function () {
             var output = stackedPanelsReducers[ACTIONS.STACKED_PANELS_SHOW_LAYER_SELECTION](DEFAULT_STATE);
