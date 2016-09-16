@@ -36,6 +36,7 @@
             newState.page = null;
             newState.straatbeeld = null;
             newState.dataSelection = null;
+            newState.stackedPanels.length = 0;
 
             return newState;
         }
