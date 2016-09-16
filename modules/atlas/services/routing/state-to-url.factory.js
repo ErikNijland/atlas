@@ -126,10 +126,16 @@
         }
 
         function getStackedPanelsParams (state) {
-            var params = {};
+            var params = {},
+                translationsEnglishToDutch = {
+                    'fullscreen': 'volledig-scherm',
+                    'layer-selection': 'kaartlaag-selectie'
+                };
 
             if (angular.isArray(state.stackedPanels) && state.stackedPanels.length) {
-                params.vensters = state.stackedPanels.join(',');
+                params.vensters = state.stackedPanels.map(function (panelNameEnglish) {
+                    return translationsEnglishToDutch[panelNameEnglish];
+                }).join(',');
             }
 
             return params;

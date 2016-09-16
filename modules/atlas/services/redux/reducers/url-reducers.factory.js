@@ -194,10 +194,16 @@
             }
 
             function getStackedPanelsState () {
-                var stackedPanels = [];
+                var stackedPanels = [],
+                    translationsDutchToEnglish = {
+                        'volledig-scherm': 'fullscreen',
+                        'kaartlaag-selectie': 'layer-selection'
+                    };
 
                 if (angular.isString(payload.vensters)) {
-                    stackedPanels = payload.vensters.split(',');
+                    stackedPanels = payload.vensters.split(',').map(function (panelNameDutch) {
+                        return translationsDutchToEnglish[panelNameDutch];
+                    });
                 }
 
                 return stackedPanels;

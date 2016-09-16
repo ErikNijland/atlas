@@ -174,28 +174,28 @@ describe('The stateToUrl factory', function () {
             mockedState.stackedPanels = ['fullscreen'];
             stateToUrl.update(mockedState, false);
             expect($location.search).toHaveBeenCalledWith(jasmine.objectContaining({
-                'vensters': 'fullscreen'
+                'vensters': 'volledig-scherm'
             }));
 
             //One stacked panel (layer-selection)
             mockedState.stackedPanels = ['layer-selection'];
             stateToUrl.update(mockedState, false);
             expect($location.search).toHaveBeenCalledWith(jasmine.objectContaining({
-                'vensters': 'layer-selection'
+                'vensters': 'kaartlaag-selectie'
             }));
 
             //Two stacked panels (fullscreen, layer-selection)
             mockedState.stackedPanels = ['fullscreen', 'layer-selection'];
             stateToUrl.update(mockedState, false);
             expect($location.search).toHaveBeenCalledWith(jasmine.objectContaining({
-                'vensters': 'fullscreen,layer-selection'
+                'vensters': 'volledig-scherm,kaartlaag-selectie'
             }));
 
             //Two stacked panels in reverse (layer-selection, fullscreen)
             mockedState.stackedPanels = ['layer-selection', 'fullscreen'];
             stateToUrl.update(mockedState, false);
             expect($location.search).toHaveBeenCalledWith(jasmine.objectContaining({
-                'vensters': 'layer-selection,fullscreen'
+                'vensters': 'kaartlaag-selectie,volledig-scherm'
             }));
         });
     });

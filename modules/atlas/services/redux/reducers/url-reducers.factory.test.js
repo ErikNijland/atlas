@@ -384,7 +384,7 @@ describe('The urlReducers factory', function () {
                 var output;
 
                 mockedState.stackedPanels = [];
-                mockedSearchParams['vensters'] = 'fullscreen';
+                mockedSearchParams['vensters'] = 'volledig-scherm';
                 output = urlReducers.URL_CHANGE(mockedState, mockedSearchParams);
                 expect(output.stackedPanels).toEqual(['fullscreen']);
             });
@@ -393,12 +393,12 @@ describe('The urlReducers factory', function () {
                 var output;
 
                 mockedState.stackedPanels = [];
-                mockedSearchParams['vensters'] = 'fullscreen,layer-selection';
+                mockedSearchParams['vensters'] = 'volledig-scherm,kaartlaag-selectie';
                 output = urlReducers.URL_CHANGE(mockedState, mockedSearchParams);
                 expect(output.stackedPanels).toEqual(['fullscreen', 'layer-selection']);
 
                 //The order in the URL is respected here
-                mockedSearchParams['vensters'] = 'layer-selection,fullscreen';
+                mockedSearchParams['vensters'] = 'kaartlaag-selectie,volledig-scherm';
                 output = urlReducers.URL_CHANGE(mockedState, mockedSearchParams);
                 expect(output.stackedPanels).toEqual(['layer-selection', 'fullscreen']);
             });
