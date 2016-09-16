@@ -20,7 +20,7 @@
         function stackedPanelsShowFullscreenMapReducer (oldState) {
             var newState = angular.copy(oldState);
 
-            newState.stackedPanels.push('map');
+            newState.stackedPanels.push('fullscreen');
 
             return newState;
         }
