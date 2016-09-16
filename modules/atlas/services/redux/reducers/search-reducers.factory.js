@@ -36,6 +36,7 @@
             newState.detail = null;
             newState.straatbeeld = null;
             newState.dataSelection = null;
+            newState.stackedPanels.length = 0;
 
             return newState;
         }
@@ -55,7 +56,7 @@
                 category: null
             };
 
-            if (oldState.map.showLayerSelection || oldState.map.isFullscreen) {
+            if (oldState.stackedPanels.length) {
                 newState.map.viewCenter = payload;
             }
 
@@ -65,6 +66,7 @@
             newState.detail = null;
             newState.straatbeeld = null;
             newState.dataSelection = null;
+            newState.stackedPanels.length = 0;
 
             return newState;
         }
