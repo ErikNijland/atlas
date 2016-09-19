@@ -21,7 +21,8 @@
             scope: {
                 mapState: '=',
                 markers: '=',
-                isFullscreen: '='
+                isFullscreen: '=',
+                showLayerSelection: '='
             },
             templateUrl: 'modules/map/components/map/map.html',
             link: linkFunction

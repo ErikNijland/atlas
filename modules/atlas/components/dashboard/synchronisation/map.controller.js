@@ -15,7 +15,8 @@
         update();
 
         function update () {
-            var state = store.getState();
+            var state = store.getState(),
+                activeStackedPanel;
 
             vm.markers = [];
 
@@ -52,7 +53,10 @@
 
             vm.mapState = state.map;
 
-            vm.isFullscreen = state.stackedPanels[state.stackedPanels.length - 1] === 'fullscreen';
+            activeStackedPanel = state.stackedPanels[state.stackedPanels.length - 1];
+
+            vm.isFullscreen = activeStackedPanel === 'fullscreen';
+            vm.showLayerSelection = activeStackedPanel === 'layer-selection';
         }
 
         function convertLocationToGeoJSON (location) {
